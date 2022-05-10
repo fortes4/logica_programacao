@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <conio.h>
+
+main(){
+	
+	int i, x;
+	printf("Digite o x: ");
+	scanf("%i",&x);
+	for(i=0; i<100;i++){
+		if(i%x==0){
+			printf("%i é divisivel por %i\n",i, x);
+		}
+	}
+}
