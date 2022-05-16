@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+main(){
+	int op, i;
+	for (i=0; i<10; i++){
+		printf("Digite um valor:");
+		scanf("%i", &op)
+		if (op==0){
+			break;
+		}
+}
