@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+main(){
+	int opcao;
+	for
+	(;;){
+		printf("Digite sua opcao:");
+			scanf("%d",&opcao);
+			if(opcao>4||opcao<1){
+		printf ("Digite um valor entre 1 e 4!!!\n");
+			continue;
+		}
+			else{
+				printf("Opcao %d escolhida!\n",opcao);
+				break;
+			}
+	}
+	switch(opcao){
+		case 1:
+			printf("Primeira opcao");
+		break;
+		case 2:
+			printf("Segunda opcao:");
+		break;
+		case 3:
+			printf("Terceira opcao:");
+		break;
+		case 4:
+			printf("Quarta opcao:");
+		break;
+	}
+	getch();
+}
