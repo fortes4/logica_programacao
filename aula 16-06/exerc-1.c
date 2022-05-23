@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-int main(){
+main(){
     int tabuada = 0;
     printf("Digite um numero de 1 a 10:");
     scanf("%i", &tabuada);
