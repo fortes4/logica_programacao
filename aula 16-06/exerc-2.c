@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-int main(){
+main(){
 
 int count, inf, sup, somatotal;
 
