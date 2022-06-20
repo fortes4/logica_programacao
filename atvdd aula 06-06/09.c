@@ -4,53 +4,48 @@
 #include <stdio.h>
 
 main(){
-	int i, j, matrizA[5][5], diagonalP, diagonalS;
-	
-		//Montando a matriz 5 x 5 
-	for(i=0; i<5; i++){
-	for(j=0; j<5; j++){
-		
-		matrizA[i][j] = i + j;
-	}
-	}
-	
-	//Mostrando a matriz 
+	int mat[5][5], i, j, c =0, pri[5], sec[5], s;
+	//Laço para Leitura da Matriz
 	for(i=0;i<5;i++){
-    for(j=0;j<5;j++){
-            
-		printf("%d |",matrizA[i][j]);
-    }
-        printf("\n");
-    }
-    
-    //Pegando os elementos da diagonal principal
-    for(i=0; i<5; i++){
-	for(j=0; j<5; j++){
-		
-		if(i==j){
-			printf("%d", matrizA[i][j]);
+		for(j=0;j<5;j++){
+			printf("Digite o elemento %i x %i da matriz: ",i,j);
+			scanf("%i",&mat[i][j]);
 		}
 	}
-	}
-	
-	//Pegando os elementos da diagonal secudaria
-	for(i=0; i<5; i++){
-	for(j=0; j<5; j++){
-		
-		if(i == 5-1-j){
-			diagonalS = matrizA[i][j];
+	//Laço para divisao da diagonal principal e secundaria em vetores
+	s = 0;
+	for(i=0;i<5;i++){
+		for(j=0;j<5;j++){
+			if(i==j){//diag principal
+				pri[i] = mat[i][j];
+			}
+			if(i+j==4){//diagonal secundaria
+				sec[s] = mat[i][j];
+				s++;
+			}
 		}
 	}
+	//Laço para apresentação dos vetores:
+	printf("Diagonal principal: \n");
+	for(i=0;i<5;i++){
+		printf("%i",pri[i]);
+	}
+	printf("Diagonal secundaria: \n");
+	for(i=0;i<5;i++){
+		printf("%i",sec[i]);
 	}
 	
-	printf("\n\nDiagonal principal = %d", diagonalP);
-	printf("\n\nDiagonal secundaria = %d", diagonalS);
-	//Verificando se a diagonal principal é igual a diagonal secundaria
-	if(diagonalP == diagonalS){
-		printf("A diagonal principal eh IGUAL  a diagonal secundaria");
+	for(i=0;i<5;i++){
+		if(sec[i]==pri[i]){
+			printf("Elemento %i da diagonal principal e secundaria sao iguais\n",i);
+			c++;
+		}
 	}
-	else{
-		printf("A diagonal principal eh DIFERENTE da diagonal secundaria");
+	
+	if(c==5){
+		printf("Elementos da diagonal principal e secundaria sao iguais!");
 	}
-	getch();
+	else {
+		printf("%i elementos da diagonal principal e secundaria sao iguais!");
+	}
 }
