@@ -4,35 +4,25 @@
 #include <stdio.h>
 
 main(){
-	int i,j, vetorA[10], auxiliar, vetorB[10]; 
-	
-	//Leitura dos valores
-	for(i=0; i<10; i++)
-	{
-		printf("Digite o valor da posicao %d: ", i);
-		scanf("%d", &vetorA[i]);
+	int vetor[10], i, ord[10], o, menor, m;
+	for(i=0;i<10;i++){//Leitura
+		printf("\nDigite o elemento %d do vetor:" ,i);
+		scanf("%i",&vetor[i]);
 	}
-	
-	//Colocando os valores em ordem crescente
-	for(i=0; i<10; i++)
-	{
-		for(j=i+1; j<10; j++)
-		{
-			if(vetorA[i] > vetorA[j])
-			{
-				auxiliar = vetorA[i];
-				vetorA[i] = vetorA[j];
-				vetorA[j] = auxiliar;
+	menor = vetor[0];
+	m = 0;
+	for(o =0; o<10; o++){
+		for(i=0; i<10; i++){
+			if(vetor[i]<vetor[m]){
+				m = i;
 			}
-			
-		}	
-		
+		}
+		//printf("O menor elemento do vetor esta na posicao %i e vale %i,m, menor);
+		ord[o] = vetor[m]; //ord[o] = menor
+		vetor[m] = 99999999;
 	}
-	
-	//Transpondo e Imprimindo os valores 
-	for(i=0; i<10; i++){
-		vetorB[i] = vetorA[i];
-		printf("%d", vetorB[i]);
+	printf("Vetor ordenado: ");
+	for(i=0;i<10;i++){
+		printf("%i", ord[i]);
 	}
-	getch();
 }
